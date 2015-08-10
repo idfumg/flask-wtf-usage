@@ -1,0 +1,14 @@
+{% from "macros.html" import render_field, render_field_with_errors %}
+
+<html>
+  <body>
+    <form method="POST" action="/" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      {{ render_field_with_errors(form.user_name) }}
+      {{ render_field_with_errors(form.user_file) }}
+      {{ form.recaptcha }}
+      <p></p>
+      <input type="submit" value="go"/>
+    </form>
+  </body>
+</html>
